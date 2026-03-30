@@ -458,7 +458,7 @@
                                     проектирования
                                 </h1>
                                 <p className="text-grey text-lg md:text-xl mb-8 max-w-lg brand-body border-l-2 border-primary/50 pl-6">
-                                    Комплексное BIM-проектирование. Сокращаем бюджет строительства на 15% и устраняем 100% коллизий еще на этапе модели.
+                                    Берем на себя все задачи в BIM: от комплексного проектирования и создания цифровых двойников до аудита и полного сопровождения. Исключаем 100% коллизий в цифре и сберегаем до 15% бюджета вашей стройки.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <a 
@@ -669,6 +669,191 @@
                                     </div>
                                 </motion.div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // --- NEW SECTION: BIM SUPPORT (BIM-АУДИТОР) ---
+        const BIMSupport = () => {
+            const supportFeatures = [
+                { title: "1. Согласование BEP", desc: "Участие в переговорах с проектными организациями в части разработки «Плана выполнения BIM проекта» (BEP).", icon: "file-signature" },
+                { title: "2. Проверка BIM-моделей", desc: "Проверка на соответствие требованиям Стандарта информационного моделирования и BEP. Формирование отчетов о проверке.", icon: "shield-check" },
+                { title: "3. Консультации подрядчиков", desc: "Совещания по вопросам моделирования, консультации по результатам проверки моделей и при работе в СОД.", icon: "messages-square" },
+                { title: "4. Экспорт объемов", desc: "Автоматизированная и точная выгрузка ведомостей объемов работ (ВОР) напрямую из BIM-модели.", icon: "database" },
+                { title: "5. Взаимодействие участников", desc: "Организация эффективного взаимодействия всех участников проекта при работе с BIM-технологиями.", icon: "network" },
+                { title: "6. Связь с Заказчиком", desc: "Организация регулярного взаимодействия с Заказчиком, прозрачная отчетность и защита интересов.", icon: "briefcase" }
+            ];
+
+            return (
+                <section className="py-32 min-h-screen flex flex-col justify-center bg-[#151515] relative overflow-hidden border-t border-grey/10">
+                    {/* Background Image Layer */}
+                    <div className="absolute inset-0 z-0 pointer-events-none">
+                        <div className="absolute inset-0 bg-[#151515]/85 z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#151515] via-transparent to-[#151515] z-10"></div>
+                        <img src="./bg_building_half.png" alt="" className="w-full h-full object-cover opacity-60" />
+                    </div>
+
+                    {/* Background glows */}
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+                    
+                    <div className="container mx-auto px-6 relative z-10">
+                        {/* Title Block */}
+                        <div className="text-center mb-16">
+                            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/40 bg-gradient-to-r from-primary/20 to-transparent text-primary text-xs md:text-sm font-bold uppercase tracking-widest mb-8 brand-sub shadow-[0_0_15px_rgba(230,67,23,0.15)] relative overflow-hidden">
+                                <div className="absolute inset-0 bg-white/10 translate-x-[-100%] animate-[shimmer_2s_infinite]"></div>
+                                <Icon name="zap" size={16} className="text-primary animate-pulse" /> Флагманское направление
+                            </div>
+                            <h2 className="text-4xl md:text-5xl text-white mb-6 brand-h1 leading-tight">Функция BIM-аудитора <br/> <span className="text-primary">и BIM-сопровождение</span></h2>
+                            <p className="text-grey max-w-3xl mx-auto brand-body text-lg leading-relaxed">
+                                Мы берем на себя комплексное управление процессами информационного моделирования на вашем объекте, применяя передовые методы контроля качества.
+                            </p>
+                        </div>
+
+                        {/* Evaluation / Audit Formats Block */}
+                        <div className="mb-24">
+                            <h3 className="text-2xl text-white brand-h1 mb-8 border-l-4 border-primary pl-4">Эволюция регламента проверок</h3>
+                            <div className="grid xl:grid-cols-3 gap-6 items-stretch">
+                                {/* Left Column: Basic & Advanced */}
+                                <div className="xl:col-span-1 flex flex-col gap-6">
+                                    <div className="bg-[#1a1a1a]/85 backdrop-blur-md p-8 rounded-2xl border border-grey/10 hover:border-grey/30 transition-colors flex-1 flex flex-col justify-center shadow-lg">
+                                        <div className="text-grey/50 font-bold mb-4 text-[10px] uppercase tracking-widest brand-sub flex items-center gap-2">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-grey/50"></div> Традиционный подход
+                                        </div>
+                                        <h4 className="text-2xl text-white brand-h1 mb-3">Ручной аудит</h4>
+                                        <p className="text-sm md:text-base text-grey brand-body leading-relaxed">Поиск коллизий и выдача отчетов проектировщикам (Excel/PDF) для последующего ручного исправления.</p>
+                                    </div>
+
+                                    <div className="bg-[#1a1a1a]/85 backdrop-blur-md p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-colors shadow-[0_0_20px_rgba(230,67,23,0.08)] flex-1 flex flex-col justify-center">
+                                        <div className="text-primary/70 font-bold mb-4 text-[10px] uppercase tracking-widest brand-sub flex items-center gap-2">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-primary/70"></div> Автоматизация
+                                        </div>
+                                        <h4 className="text-2xl text-white brand-h1 mb-3">Плагины в Revit</h4>
+                                        <p className="text-sm md:text-base text-grey brand-body leading-relaxed">Передача и отслеживание статусов коллизий напрямую в среде разработки (Revit) через специализированные плагины.</p>
+                                    </div>
+                                </div>
+
+                                {/* Right Column: BI Analytics (TOP Service) */}
+                                <div className="xl:col-span-2 relative group">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-[#d13a12] rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                                    <div className="relative bg-[#151515]/85 backdrop-blur-md h-full p-8 md:p-10 rounded-2xl border border-primary/40 flex flex-col lg:flex-row gap-8 items-center overflow-hidden">
+                                        {/* Badge */}
+                                        <div className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-bl-xl z-20 shadow-lg flex items-center gap-1">
+                                            <Icon name="star" size={12} className="fill-white" /> Топ услуга
+                                        </div>
+                                        
+                                        {/* Text Content */}
+                                        <div className="w-full lg:w-5/12 z-10 relative shrink-0">
+                                            <div className="text-primary font-bold mb-3 text-[10px] uppercase tracking-widest brand-sub flex items-center gap-2">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div> Умный контроль
+                                            </div>
+                                            <h4 className="text-3xl md:text-4xl text-white brand-h1 mb-4">Аналитический аудит</h4>
+                                            <p className="text-grey brand-body mb-6 text-sm md:text-base leading-relaxed">
+                                                Осуществляем глубокий и прозрачный контроль информационной модели с помощью визуальных дашбордов BI-аналитики.
+                                            </p>
+                                            
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+                                                <div className="flex items-start gap-3 bg-[#202020] p-3.5 rounded-lg border border-grey/5 hover:border-primary/30 transition-colors">
+                                                    <Icon name="check-circle" size={18} className="text-primary shrink-0 mt-0.5" />
+                                                    <span className="text-sm text-white brand-sub leading-snug">Контроль ТЭП и объемов</span>
+                                                </div>
+                                                <div className="flex items-start gap-3 bg-[#202020] p-3.5 rounded-lg border border-grey/5 hover:border-primary/30 transition-colors">
+                                                    <Icon name="check-circle" size={18} className="text-primary shrink-0 mt-0.5" />
+                                                    <span className="text-sm text-white brand-sub leading-snug">Жесткий нормоконтроль</span>
+                                                </div>
+                                                <div className="flex items-start gap-3 bg-[#202020] p-3.5 rounded-lg border border-grey/5 hover:border-primary/30 transition-colors">
+                                                    <Icon name="check-circle" size={18} className="text-primary shrink-0 mt-0.5" />
+                                                    <span className="text-sm text-white brand-sub leading-snug">Валидация данных</span>
+                                                </div>
+                                                <div className="flex items-start gap-3 bg-[#202020] p-3.5 rounded-lg border border-grey/5 hover:border-primary/30 transition-colors">
+                                                    <Icon name="check-circle" size={18} className="text-primary shrink-0 mt-0.5" />
+                                                    <span className="text-sm text-white brand-sub leading-snug">Контроль морфологии, нумерации и типизации</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Enhanced Video Placeholder */}
+                                        <div className="w-full lg:w-7/12 aspect-video bg-[#202020] rounded-xl border border-grey/20 relative overflow-hidden flex flex-col group/vid shadow-[0_0_40px_rgba(230,67,23,0.15)] hover:shadow-[0_0_50px_rgba(230,67,23,0.3)] transition-all duration-500 transform hover:-translate-y-1">
+                                            {/* Video Container */}
+                                            <div className="relative flex-1 bg-[#151515] flex items-center justify-center overflow-hidden cursor-pointer">
+                                                <video 
+                                                    src="./bi_dashboard.mp4" 
+                                                    autoPlay 
+                                                    loop 
+                                                    muted 
+                                                    playsInline 
+                                                    className="w-full h-full object-cover opacity-90 group-hover/vid:opacity-100 group-hover/vid:scale-105 transition-transform duration-700" 
+                                                />
+                                                
+                                                {/* Live Demo Badge */}
+                                                <div className="absolute bottom-4 right-4 bg-primary text-white text-[10px] uppercase tracking-widest px-3 py-1.5 rounded shadow-lg backdrop-blur-sm font-bold flex items-center gap-1.5 z-20">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Live Demo
+                                                </div>
+                                                
+                                                {/* Play Overlay (Fades out on hover) */}
+                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover/vid:opacity-0 transition-opacity duration-500 z-10">
+                                                    <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center shadow-[0_0_30px_rgba(230,67,23,0.6)] backdrop-blur-sm pl-1 transform group-hover/vid:scale-110 transition-transform">
+                                                        <Icon name="play" size={28} className="text-white" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Standard 6 Features Grid */}
+                        <div className="mb-12">
+                            <h3 className="text-2xl text-white brand-h1 mb-8 border-l-4 border-grey/30 pl-4">Базовый функционал BIM-аудитора</h3>
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {supportFeatures.map((feature, idx) => (
+                                    <motion.div 
+                                        key={idx}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="bg-[#1a1a1a]/85 backdrop-blur-md p-8 rounded-2xl border border-grey/10 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden"
+                                    >
+                                        <div className="w-12 h-12 bg-[#202020] rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors relative z-10 border border-grey/5">
+                                            <Icon name={feature.icon} size={24} />
+                                        </div>
+                                        <h4 className="text-xl text-white mb-3 brand-h1 tracking-wide relative z-10">{feature.title}</h4>
+                                        <p className="text-sm text-grey leading-relaxed brand-body relative z-10">{feature.desc}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* CTA & Metrics */}
+                        <div className="mt-16 border-t border-grey/10 pt-12 flex flex-col xl:flex-row items-center justify-between gap-10">
+                            <div className="flex items-center gap-8 md:gap-12 flex-wrap justify-center xl:justify-start">
+                                <div className="text-center xl:text-left">
+                                    <div className="text-4xl text-white brand-h1 mb-1">150<span className="text-primary">+</span></div>
+                                    <div className="text-xs text-grey uppercase tracking-widest brand-sub font-bold">Проверенных моделей</div>
+                                </div>
+                                <div className="hidden md:block w-px h-12 bg-grey/10"></div>
+                                <div className="text-center xl:text-left">
+                                    <div className="text-4xl text-white brand-h1 mb-1">15 000<span className="text-primary">+</span></div>
+                                    <div className="text-xs text-grey uppercase tracking-widest brand-sub font-bold">Выставлено замечаний</div>
+                                </div>
+                                <div className="hidden md:block w-px h-12 bg-grey/10"></div>
+                                <div className="text-center xl:text-left">
+                                    <div className="text-4xl text-white brand-h1 mb-1">1<span className="text-primary">млн+</span></div>
+                                    <div className="text-xs text-grey uppercase tracking-widest brand-sub font-bold">М² проверено</div>
+                                </div>
+                                <div className="hidden md:block w-px h-12 bg-grey/10"></div>
+                                <div className="text-center xl:text-left">
+                                    <div className="text-5xl text-white brand-h1 mb-1 leading-none mt-[-4px]">∞</div>
+                                    <div className="text-xs text-grey uppercase tracking-widest brand-sub font-bold">Обработано</div>
+                                </div>
+                            </div>
+                            <a href="#contact" className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-[#d13a12] text-white brand-h1 text-2xl tracking-wide rounded-xl shadow-[0_0_30px_rgba(230,67,23,0.3)] transition-all transform hover:scale-[1.02] pt-6 pb-4 w-full xl:w-auto shrink-0">
+                                Заказать сопровождение <Icon name="check-circle" size={24} className="mb-1" />
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -1674,6 +1859,7 @@
                     <Hero />
                     <Trust />
                     <PainPoints />
+                    <BIMSupport />
                     <Services />
                     <Training />
                     <Families />
